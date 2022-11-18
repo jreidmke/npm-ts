@@ -1,1 +1,1 @@
-export * from "./stories/Switch";
+export { default as Switch } from "./components/Switch";
