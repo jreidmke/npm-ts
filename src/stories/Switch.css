@@ -1,0 +1,23 @@
+.SwitchRoot {
+    @apply border border-blue-200 rounded-full mx-6;
+    width: 42px;
+    height: 25px;
+    position: relative;
+}
+
+.SwitchRoot[data-state="checked"] {
+    @apply border-none bg-gradient-to-r from-cyan-200 to-blue-500;
+}
+
+.SwitchThumb {
+    @apply block bg-blue-200 rounded-full;
+    width: 21px;
+    height: 21px;
+    transition: transform 100ms;
+    transform: translateX(2px);
+    will-change: transform;
+}
+
+.SwitchThumb[data-state="checked"] {
+    transform: translateX(19px);
+}
