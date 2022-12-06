@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import Toast from "../components/Toast";
+import Toast from "../components/Toast/Toast";
 
 export default {
     title: "Example/Toast",
