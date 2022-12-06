@@ -1,5 +1,6 @@
 import React from "react";
 import * as Checkbox from "@radix-ui/react-checkbox";
+import * as Label from "@radix-ui/react-label";
 import { CheckIcon } from "@radix-ui/react-icons";
 import "./Checkbox.scss";
 
@@ -15,7 +16,9 @@ const CustomCheckbox = ({ label = "Checkbox Label" }: CheckboxProps) => (
                     <CheckIcon />
                 </Checkbox.Indicator>
             </Checkbox.Root>
-            <p className="ml-2">{label}</p>
+            <Label.Root className="LabelRoot ml-4" htmlFor="firstName">
+                {label}
+            </Label.Root>
         </div>
     </form>
 );
