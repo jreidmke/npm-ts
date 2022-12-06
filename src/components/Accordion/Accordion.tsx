@@ -4,7 +4,7 @@ import cx from "classnames";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 import "./Accordion.scss";
 
-const AccordionDemo = () => (
+const CustomAccordion = () => (
     <Accordion.Root
         className="AccordionRoot"
         type="single"
@@ -73,4 +73,4 @@ const AccordionContent = ({
     </Accordion.Content>
 );
 
-export default AccordionDemo;
+export default CustomAccordion;
