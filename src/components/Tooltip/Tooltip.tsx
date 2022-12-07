@@ -1,21 +1,28 @@
 import React from "react";
 import * as Tooltip from "@radix-ui/react-tooltip";
-import { PlusIcon } from "@radix-ui/react-icons";
 import "./Tooltip.scss";
 
-const CustomTooltip = () => {
+export type TooltipProps = {
+    trigger: any;
+    tooltipContent: string;
+    contentClasses: string;
+    arrowClasses: string;
+};
+
+const CustomTooltip = ({
+    trigger,
+    tooltipContent,
+    contentClasses,
+    arrowClasses,
+}: TooltipProps) => {
     return (
         <Tooltip.Provider>
             <Tooltip.Root>
-                <Tooltip.Trigger asChild>
-                    <button className="IconButton">
-                        <PlusIcon />
-                    </button>
-                </Tooltip.Trigger>
+                <Tooltip.Trigger asChild>{trigger}</Tooltip.Trigger>
                 <Tooltip.Portal>
-                    <Tooltip.Content className="TooltipContent" sideOffset={5}>
-                        Add to library
-                        <Tooltip.Arrow className="TooltipArrow" />
+                    <Tooltip.Content className={contentClasses}>
+                        {tooltipContent}
+                        <Tooltip.Arrow className={arrowClasses} />
                     </Tooltip.Content>
                 </Tooltip.Portal>
             </Tooltip.Root>
