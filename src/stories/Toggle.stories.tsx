@@ -8,7 +8,12 @@ export default {
     component: Toggle,
 } as ComponentMeta<typeof Toggle>;
 
-const Template: ComponentStory<typeof Toggle> = (args) => <Toggle />;
+const Template: ComponentStory<typeof Toggle> = (args) => <Toggle {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+    trigger: <button className="italic">t</button>,
+    genericClasses: "rounded h-16 w-16 m-2 shadow-md",
+    inactiveClasses: "hover:bg-pink-100",
+    activeClasses: "border border-black bg-pink-100",
+};
