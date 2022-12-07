@@ -1,37 +1,44 @@
-import React from "react";
+import * as React from "react";
 import * as AlertDialog from "@radix-ui/react-alert-dialog";
 import "./AlertDialog.scss";
 
-const CustomAlertDialog = () => (
+export type AlertDialogProps = {
+    trigger: any;
+    title: string;
+    description: string;
+    showCancel?: boolean;
+    options?: JSX.IntrinsicElements["button"][];
+};
+
+const CustomAlertDialog = ({
+    trigger,
+    title,
+    description,
+    showCancel = true,
+    options,
+}: AlertDialogProps) => (
     <AlertDialog.Root>
-        <AlertDialog.Trigger asChild>
-            <button className="Button violet">Delete account</button>
-        </AlertDialog.Trigger>
+        <AlertDialog.Trigger asChild>{trigger}</AlertDialog.Trigger>
         <AlertDialog.Portal>
             <AlertDialog.Overlay className="AlertDialogOverlay" />
             <AlertDialog.Content className="AlertDialogContent">
                 <AlertDialog.Title className="AlertDialogTitle">
-                    Are you absolutely sure?
+                    {title}
                 </AlertDialog.Title>
                 <AlertDialog.Description className="AlertDialogDescription">
-                    This action cannot be undone. This will permanently delete
-                    your account and remove your data from our servers.
+                    {description}
                 </AlertDialog.Description>
-                <div
-                    style={{
-                        display: "flex",
-                        gap: 25,
-                        justifyContent: "flex-end",
-                    }}
-                >
-                    <AlertDialog.Cancel asChild>
-                        <button className="Button mauve">Cancel</button>
-                    </AlertDialog.Cancel>
-                    <AlertDialog.Action asChild>
-                        <button className="Button red">
-                            Yes, delete account
-                        </button>
-                    </AlertDialog.Action>
+                <div className="flex justify-end space-x-4 mt-4">
+                    {showCancel && (
+                        <AlertDialog.Cancel asChild>
+                            <button className="Button mauve">Cancel</button>
+                        </AlertDialog.Cancel>
+                    )}
+
+                    {options?.length &&
+                        options.map((o: any) => (
+                            <AlertDialog.Action asChild>{o}</AlertDialog.Action>
+                        ))}
                 </div>
             </AlertDialog.Content>
         </AlertDialog.Portal>
