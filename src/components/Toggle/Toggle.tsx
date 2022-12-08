@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import * as Toggle from "@radix-ui/react-toggle";
 import cx from "classnames";
-import "./Toggle.scss";
 
 export type ToggleProps = {
     trigger: any;

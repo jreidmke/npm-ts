@@ -3,57 +3,50 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import "./Dialog.scss";
 
-const CustomDialog = () => (
+export type DialogProps = {
+    trigger: any;
+    dialogTitle?: string;
+    dialogDescription?: string;
+    dialogContent: any | any[];
+    showCancel: boolean;
+    options?: JSX.IntrinsicElements["button"][];
+};
+
+const CustomDialog = ({
+    trigger,
+    dialogTitle,
+    dialogDescription,
+    dialogContent,
+    showCancel = true,
+    options,
+}: DialogProps) => (
     <Dialog.Root>
-        <Dialog.Trigger asChild>
-            <button className="Button violet">Edit profile</button>
-        </Dialog.Trigger>
+        <Dialog.Trigger asChild>{trigger}</Dialog.Trigger>
         <Dialog.Portal>
             <Dialog.Overlay className="DialogOverlay" />
             <Dialog.Content className="DialogContent">
                 <Dialog.Title className="DialogTitle">
-                    Edit profile
+                    {dialogTitle}
                 </Dialog.Title>
                 <Dialog.Description className="DialogDescription">
-                    Make changes to your profile here. Click save when you're
-                    done.
+                    {dialogDescription}
                 </Dialog.Description>
-                <fieldset className="Fieldset">
-                    <label className="Label" htmlFor="name">
-                        Name
-                    </label>
-                    <input
-                        className="Input"
-                        id="name"
-                        defaultValue="Pedro Duarte"
-                    />
-                </fieldset>
-                <fieldset className="Fieldset">
-                    <label className="Label" htmlFor="username">
-                        Username
-                    </label>
-                    <input
-                        className="Input"
-                        id="username"
-                        defaultValue="@peduarte"
-                    />
-                </fieldset>
-                <div
-                    style={{
-                        display: "flex",
-                        marginTop: 25,
-                        justifyContent: "flex-end",
-                    }}
-                >
-                    <Dialog.Close asChild>
-                        <button className="Button green">Save changes</button>
-                    </Dialog.Close>
+                {dialogContent}
+                <div className="flex justify-end space-x-4">
+                    {options?.length &&
+                        options.map((o: any) => (
+                            <Dialog.Close asChild key={o}>
+                                {o}
+                            </Dialog.Close>
+                        ))}
                 </div>
-                <Dialog.Close asChild>
-                    <button className="IconButton" aria-label="Close">
-                        <Cross2Icon />
-                    </button>
-                </Dialog.Close>
+                {showCancel && (
+                    <Dialog.Close asChild>
+                        <button className="IconButton" aria-label="Close">
+                            <Cross2Icon />
+                        </button>
+                    </Dialog.Close>
+                )}
             </Dialog.Content>
         </Dialog.Portal>
     </Dialog.Root>
