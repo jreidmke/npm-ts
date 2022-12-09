@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { PlusIcon } from "@radix-ui/react-icons";
 
-import Tooltip from "../components/Tooltip/Tooltip";
+import Tooltip from "../components/Tooltip";
 
 export default {
     title: "Example/Tooltip",
@@ -23,4 +23,12 @@ Primary.args = {
     tooltipContent: "Pass in trigger and tooltip content",
     contentClasses: "bg-pink-200 py-4 px-8 rounded-full",
     arrowClasses: "fill-pink-200",
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+    trigger: <p>This p tag can also be a trigger</p>,
+    tooltipContent: "Pass in trigger and tooltip content",
+    contentClasses: "bg-sky-500 p-8",
+    arrowClasses: "fill-sky-500",
 };

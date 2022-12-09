@@ -1,41 +1,45 @@
-import React from "react";
-import * as ToggleGroup from "@radix-ui/react-toggle-group";
-import {
-    TextAlignLeftIcon,
-    TextAlignCenterIcon,
-    TextAlignRightIcon,
-} from "@radix-ui/react-icons";
-import "./ToggleGroup.scss";
+import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
+import cx from "classnames";
+import React, { ReactElement } from "react";
 
-const CustomToggleGroup = () => (
-    <ToggleGroup.Root
-        className="ToggleGroup"
-        type="single"
-        defaultValue="center"
-        aria-label="Text alignment"
-    >
-        <ToggleGroup.Item
-            className="ToggleGroupItem"
-            value="left"
-            aria-label="Left aligned"
-        >
-            <TextAlignLeftIcon />
-        </ToggleGroup.Item>
-        <ToggleGroup.Item
-            className="ToggleGroupItem"
-            value="center"
-            aria-label="Center aligned"
-        >
-            <TextAlignCenterIcon />
-        </ToggleGroup.Item>
-        <ToggleGroup.Item
-            className="ToggleGroupItem"
-            value="right"
-            aria-label="Right aligned"
-        >
-            <TextAlignRightIcon />
-        </ToggleGroup.Item>
-    </ToggleGroup.Root>
-);
+export interface ToggleItem {
+    value: string;
+    label: string;
+    icon: ReactElement;
+    itemAriaLabel: string;
+}
 
-export default CustomToggleGroup;
+export type ToggleGroupProps = {
+    items: ToggleItem[];
+    groupAriaLabel: string;
+    itemProps: string;
+};
+
+const ToggleGroup = ({
+    items,
+    groupAriaLabel,
+    itemProps,
+}: ToggleGroupProps) => {
+    return (
+        <ToggleGroupPrimitive.Root
+            type="multiple"
+            aria-label={groupAriaLabel}
+            defaultValue={[items[0].value]}
+        >
+            {items.map(({ value, label, icon }, i) => (
+                <ToggleGroupPrimitive.Item
+                    key={`group-item-${value}-${label}`}
+                    value={value}
+                    aria-label={label}
+                    className={cx("group", itemProps)}
+                >
+                    {React.cloneElement(icon, {
+                        className: "w-5 h-5 text-white",
+                    })}
+                </ToggleGroupPrimitive.Item>
+            ))}
+        </ToggleGroupPrimitive.Root>
+    );
+};
+
+export default ToggleGroup;

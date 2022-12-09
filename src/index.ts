@@ -19,4 +19,4 @@ export { default as Tabs } from "./components/Tabs/Tabs";
 export { default as Toast } from "./components/Toast/Toast";
 export { default as Toggle } from "./components/Toggle/Toggle";
 export { default as ToggleGroup } from "./components/ToggleGroup/ToggleGroup";
-export { default as Tooltip } from "./components/Tooltip/Tooltip";
+export { default as Tooltip } from "./components/Tooltip";
