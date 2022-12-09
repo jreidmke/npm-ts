@@ -3,11 +3,11 @@ import React from "react";
 
 export type ToastProps = {
     //auto open props
-    defaultOpen: boolean;
-    timeout: number;
+    defaultOpen?: boolean;
+    timeout?: number;
 
     //trigger props
-    triggerClassName: string;
+    triggerClassName?: string;
     triggerText?: string;
 
     //toast props
