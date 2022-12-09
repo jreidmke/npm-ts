@@ -5,8 +5,8 @@ import {
     FontItalicIcon,
     UnderlineIcon,
 } from "@radix-ui/react-icons";
-import ToggleGroup from "../components/ToggleGroup/ToggleGroup";
-import { ToggleItem } from "../components/ToggleGroup/ToggleGroup";
+import ToggleGroup from "../components/ToggleGroup";
+import { ToggleItem } from "../components/ToggleGroup";
 
 const items: ToggleItem[] = [
     {
