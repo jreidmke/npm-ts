@@ -3,7 +3,7 @@ import React from "react";
 
 export type ToastProps = {
     //auto open props
-    defaultOpen?: boolean;
+    defaultOpen: boolean;
     timeout?: number;
 
     //trigger props
@@ -15,9 +15,9 @@ export type ToastProps = {
     toastContent: any | any[];
 
     //dismiss button props
-    dismissBtnClassName: string;
-    dismissBtnText: string;
     isDismissable: boolean;
+    dismissBtnClassName?: string;
+    dismissBtnText?: string;
 };
 
 const CustomToast = ({
@@ -27,9 +27,9 @@ const CustomToast = ({
     triggerText,
     toastContentClassName,
     toastContent,
+    isDismissable,
     dismissBtnClassName,
     dismissBtnText = "Dismiss",
-    isDismissable = true,
 }: ToastProps) => {
     const [open, setOpen] = React.useState(defaultOpen || false);
     if (defaultOpen) {

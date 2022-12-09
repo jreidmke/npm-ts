@@ -14,6 +14,7 @@ const Template: ComponentStory<typeof Toast> = (args) => <Toast {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
+    defaultOpen: false,
     triggerClassName:
         "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full",
     triggerText: "Click here for toast",
