@@ -15,7 +15,7 @@ export { default as Select } from "./components/Select/Select";
 export { default as Separator } from "./components/Separator/Separator";
 export { default as Slider } from "./components/Slider/Slider";
 export { default as Switch } from "./components/Switch/Switch";
-export { default as Tabs } from "./components/Tabs/Tabs";
+export { default as Tabs } from "./components/Tabs";
 export { default as Toast } from "./components/Toast";
 export { default as Toggle } from "./components/Toggle";
 export { default as ToggleGroup } from "./components/ToggleGroup";
