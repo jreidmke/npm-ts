@@ -7,7 +7,6 @@ import Toast from "../components/Toast";
 export default {
     title: "Example/Toast",
     component: Toast,
-    // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } as ComponentMeta<typeof Toast>;
 
 const Template: ComponentStory<typeof Toast> = (args) => <Toast {...args} />;
@@ -21,11 +20,6 @@ Primary.args = {
     toastContentClassName: cx(
         "z-50 fixed bottom-4 inset-x-4 w-auto md:top-4 md:right-4 md:left-auto md:bottom-auto md:w-full md:max-w-sm shadow-lg rounded-lg",
         "bg-gray-800",
-        "radix-state-open:animate-toast-slide-in-bottom md:radix-state-open:animate-toast-slide-in-right",
-        "radix-state-closed:animate-toast-hide",
-        "radix-swipe-end:animate-toast-swipe-out",
-        "translate-x-radix-toast-swipe-move-x",
-        "radix-swipe-cancel:translate-x-0 radix-swipe-cancel:duration-200 radix-swipe-cancel:ease-[ease]",
         "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
     ),
     toastContent: (
@@ -36,7 +30,7 @@ Primary.args = {
                         Pull Request Review
                     </h1>
                     <p className="mt-1 text-sm text-gray-700 dark:text-gray-400">
-                        Someone requested your review on{" "}
+                        Someone requested your review on
                         <span className="font-medium">repository/branch</span>
                     </p>
                 </div>
@@ -48,7 +42,6 @@ Primary.args = {
                             className="w-full border border-transparent rounded-lg px-3 py-2 flex items-center justify-center text-sm font-medium text-purple-600 dark:text-purple-500 hover:bg-gray-50 dark:hover:bg-gray-900 focus:z-10 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                             onClick={(e) => {
                                 e.preventDefault();
-                                window.open("https://github.com");
                             }}
                         >
                             Review
@@ -58,8 +51,9 @@ Primary.args = {
             </div>
         </div>
     ),
+    isDismissable: true,
     dismissBtnClassName:
-        "h-0 flex-1 flex w-full border border-transparent rounded-lg px-3 py-2 flex items-center justify-center text-sm font-medium text-gray-700 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-900 focus:z-10 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
+        "h-0 flex-1 flex w-full border border-transparent rounded-lg px-3 py-2 flex items-center justify-center text-sm font-medium text-gray-700 dark:text-gray-100 focus:z-10 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
     dismissBtnText: "Click here to dismiss",
 };
 
@@ -69,11 +63,6 @@ Secondary.args = {
     toastContentClassName: cx(
         "z-50 fixed bottom-4 inset-x-4 w-auto md:top-4 md:right-4 md:left-auto md:bottom-auto md:w-full md:max-w-sm shadow-lg rounded-lg",
         "bg-gray-800",
-        "radix-state-open:animate-toast-slide-in-bottom md:radix-state-open:animate-toast-slide-in-right",
-        "radix-state-closed:animate-toast-hide",
-        "radix-swipe-end:animate-toast-swipe-out",
-        "translate-x-radix-toast-swipe-move-x",
-        "radix-swipe-cancel:translate-x-0 radix-swipe-cancel:duration-200 radix-swipe-cancel:ease-[ease]",
         "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
     ),
     toastContent: (
