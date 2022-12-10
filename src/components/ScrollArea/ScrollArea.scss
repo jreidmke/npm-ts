@@ -3,11 +3,9 @@
 @import "@radix-ui/colors/violet.css";
 
 .ScrollAreaRoot {
-    width: 200px;
-    height: 225px;
     border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 2px 10px var(--blackA7);
+    box-shadow: 0 2px 10px black;
     background-color: white;
     --scrollbar-size: 10px;
 }
@@ -25,8 +23,7 @@
     /* disable browser handling of all panning and zooming gestures on touch devices */
     touch-action: none;
     padding: 2px;
-    background: var(--blackA6);
-    transition: background 160ms ease-out;
+    background: black;
 }
 .ScrollAreaScrollbar:hover {
     background: var(--blackA8);
@@ -45,9 +42,8 @@
     border-radius: var(--scrollbar-size);
     position: relative;
 }
-/* increase target size for touch devices https://www.w3.org/WAI/WCAG21/Understanding/target-size.html */
+
 .ScrollAreaThumb::before {
-    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -58,22 +54,3 @@
     min-height: 44px;
 }
 
-.ScrollAreaCorner {
-    background: var(--blackA8);
-}
-
-.Text {
-    color: var(--violet11);
-    font-size: 15px;
-    line-height: 18px;
-    font-weight: 500;
-}
-
-.Tag {
-    color: var(--mauve12);
-    font-size: 13px;
-    line-height: 18px;
-    margin-top: 10px;
-    border-top: 1px solid var(--mauve6);
-    padding-top: 10px;
-}

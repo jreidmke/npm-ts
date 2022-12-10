@@ -49,7 +49,7 @@ Primary.args = {
         "radix-state-instant-open:bg-gray-50 radix-state-delayed-open:bg-gray-50"
     ),
     scrollBtnClassName: "bg-black",
-    viewportClassName: "bg-white",
+    viewportClassName: "rounded-md bg-white dark:bg-gray-500",
     itemClassName: cx(
         "relative flex items-center px-8 py-2 rounded-md text-sm text-gray-700 dark:text-gray-300 font-medium focus:bg-gray-100 dark:focus:bg-gray-900",
         "radix-disabled:opacity-50",

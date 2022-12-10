@@ -2,17 +2,27 @@ import React from "react";
 import * as ScrollArea from "@radix-ui/react-scroll-area";
 import "./ScrollArea.scss";
 
-const TAGS = Array.from({ length: 50 }).map(
-    (_, i, a) => `v1.2.0-beta.${a.length - i}`
-);
+export type ScrollAreaProps = {
+    items: any[];
+    scrollAreaSize: string;
+    titleClassName: string;
+    titleContent: string;
+    itemClass: string;
+};
 
-const CustomScrollArea = () => (
-    <ScrollArea.Root className="ScrollAreaRoot">
+const ScrollAreaDemo = ({
+    items,
+    scrollAreaSize,
+    titleClassName,
+    titleContent,
+    itemClass,
+}: ScrollAreaProps) => (
+    <ScrollArea.Root className={`ScrollAreaRoot ${scrollAreaSize}`}>
         <ScrollArea.Viewport className="ScrollAreaViewport">
             <div style={{ padding: "15px 20px" }}>
-                <div className="Text">Tags</div>
-                {TAGS.map((tag) => (
-                    <div className="Tag" key={tag}>
+                <div className={titleClassName}>{titleContent}</div>
+                {items.map((tag) => (
+                    <div className={itemClass} key={tag}>
                         {tag}
                     </div>
                 ))}
@@ -30,8 +40,8 @@ const CustomScrollArea = () => (
         >
             <ScrollArea.Thumb className="ScrollAreaThumb" />
         </ScrollArea.Scrollbar>
-        <ScrollArea.Corner className="ScrollAreaCorner" />
+        <ScrollArea.Corner />
     </ScrollArea.Root>
 );
 
-export default CustomScrollArea;
+export default ScrollAreaDemo;
