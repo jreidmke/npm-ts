@@ -1,7 +1,8 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import * as DialogPrimitive from "@radix-ui/react-dialog";
 
-import Dialog from "../components/Dialog/Dialog";
+import Dialog from "../components/Dialog";
 
 export default {
     title: "Example/Dialog",
@@ -24,14 +25,22 @@ Primary.args = {
             </button>
             <br />
             <input
-                className="block shadow-md text-gray-700 text-sm font-bold mb-2"
+                className="block shadow-md text-gray-700 text-sm font-bold mb-2 w-full"
                 placeholder=" any type of content (input)"
             />
         </div>
     ),
     showCancel: true,
     options: [
-        <button className="Button green">Yes</button>,
-        <button className="Button red">No</button>,
+        <DialogPrimitive.Close asChild>
+            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">
+                Yes
+            </button>
+        </DialogPrimitive.Close>,
+        <DialogPrimitive.Close asChild>
+            <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
+                No
+            </button>
+        </DialogPrimitive.Close>,
     ],
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import DropdownMenu from "../components/DropdownMenu/DropdownMenu";
+import DropdownMenu from "../components/DropdownMenu";
 
 export default {
     title: "Example/DropdownMenu",
