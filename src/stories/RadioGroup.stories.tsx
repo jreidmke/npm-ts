@@ -35,6 +35,6 @@ Primary.args = {
         "focus:outline-none focus:ring-0 focus:ring-offset-0 focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-800"
     ),
     itemClassName: cx(
-        "ml-2 block text-sm font-medium text-gray-700 dark:text-gray-400"
+        "ml-2 block text-sm font-medium text-gray-700 dark:text-gray-100"
     ),
 };
