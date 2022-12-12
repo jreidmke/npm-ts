@@ -30,13 +30,11 @@ const CustomDialog = ({
                     {options?.length && options.map((o: any) => o)}
                 </div>
                 {showCancel && (
-                    <Dialog.Close
-                        asChild
-                        className={cx(
-                            "absolute top-3.5 right-3.5 inline-flex items-center justify-center rounded-full p-1"
-                        )}
-                    >
-                        <button className="IconButton" aria-label="Close">
+                    <Dialog.Close asChild>
+                        <button
+                            className="absolute top-3.5 right-3.5 inline-flex items-center justify-center rounded-full p-1"
+                            aria-label="Close"
+                        >
                             <Cross2Icon />
                         </button>
                     </Dialog.Close>
