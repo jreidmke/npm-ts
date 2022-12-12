@@ -9,7 +9,7 @@ export { default as HoverCard } from "./components/HoverCard/HoverCard";
 export { default as NavMenu } from "./components/NavMenu/NavMenu";
 export { default as Popover } from "./components/Popover/Popover";
 export { default as Progress } from "./components/Progress/Progress";
-export { default as RadioGroup } from "./components/RadioGroup/RadioGroup";
+export { default as RadioGroup } from "./components/RadioGroup";
 export { default as ScrollArea } from "./components/ScrollArea/ScrollArea";
 export { default as Select } from "./components/Select";
 export { default as Slider } from "./components/Slider";
