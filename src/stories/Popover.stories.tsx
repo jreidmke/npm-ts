@@ -63,7 +63,6 @@ Primary.args = {
                             key={`popover-items-${id}`}
                             className="flex items-center"
                         >
-                            {/* <legend>Choose your favorite monster</legend> */}
                             <label
                                 htmlFor={id}
                                 className="shrink-0 grow text-xs font-medium text-gray-700 dark:text-gray-400"

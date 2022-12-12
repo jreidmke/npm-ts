@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import NavMenu from "../components/NavMenu/NavMenu";
+import NavMenu from "../components/NavMenu";
 
 export default {
     title: "Example/NavMenu",
