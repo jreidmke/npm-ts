@@ -1,6 +1,5 @@
 import React from "react";
 import * as Avatar from "@radix-ui/react-avatar";
-import "./Avatar.scss";
 
 export type AvatarProps = {
     imageSrc: string;

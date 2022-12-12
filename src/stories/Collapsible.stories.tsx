@@ -27,6 +27,7 @@ Primary.args = {
             <TriangleRightIcon className="transform duration-300 ease-in-out group-radix-state-open:rotate-90 mt-.5" />
         </div>
     ),
+    spacingClassName: "space-y-4",
     content: ["ABC", "123", "089"].map((title, i) => (
         <div
             key={`collapsible-${title}-${i}`}

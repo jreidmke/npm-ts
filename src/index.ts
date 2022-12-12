@@ -1,7 +1,7 @@
 export { default as Accordion } from "./components/Accordion/Accordion";
 export { default as AlertDialog } from "./components/AlertDiaglog/AlertDialog";
-export { default as Avatar } from "./components/Avatar/Avatar";
-export { default as Checkbox } from "./components/Checkbox/Checkbox";
+export { default as Avatar } from "./components/Avatar";
+export { default as Checkbox } from "./components/Checkbox";
 export { default as Collasible } from "./components/Collapsible";
 export { default as Dialog } from "./components/Dialog";
 export { default as DropdownMenu } from "./components/DropdownMenu";

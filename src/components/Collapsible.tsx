@@ -4,12 +4,14 @@ import React from "react";
 export type CollapsibleProps = {
     triggerClassName: string;
     triggerContent: any;
+    spacingClassName: any;
     content: any | any[];
 };
 
 const Collapsible = ({
     triggerClassName,
     triggerContent,
+    spacingClassName,
     content,
 }: CollapsibleProps) => {
     const [isOpen, setIsOpen] = React.useState(true);
@@ -19,7 +21,9 @@ const Collapsible = ({
             <CollapsiblePrimitive.Trigger className={triggerClassName}>
                 {triggerContent}
             </CollapsiblePrimitive.Trigger>
-            <CollapsiblePrimitive.Content className="mt-4 flex flex-col space-y-4">
+            <CollapsiblePrimitive.Content
+                className={`mt-4 flex flex-col ${spacingClassName}`}
+            >
                 {content}
             </CollapsiblePrimitive.Content>
         </CollapsiblePrimitive.Root>
