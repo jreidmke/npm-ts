@@ -7,7 +7,7 @@ export { default as Dialog } from "./components/Dialog/Dialog";
 export { default as DropdownMenu } from "./components/DropdownMenu/DropdownMenu";
 export { default as HoverCard } from "./components/HoverCard/HoverCard";
 export { default as NavMenu } from "./components/NavMenu/NavMenu";
-export { default as Popover } from "./components/Popover/Popover";
+export { default as Popover } from "./components/Popover";
 export { default as Progress } from "./components/Progress";
 export { default as RadioGroup } from "./components/RadioGroup";
 export { default as ScrollArea } from "./components/ScrollArea/ScrollArea";
