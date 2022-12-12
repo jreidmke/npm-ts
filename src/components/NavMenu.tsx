@@ -17,7 +17,7 @@ const NavigationMenu = (props: Props) => {
                             "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                         )}
                     >
-                        Overview
+                        NOT YET READY
                     </NavigationMenuPrimitive.Trigger>
 
                     <NavigationMenuPrimitive.Content
@@ -52,7 +52,7 @@ const NavigationMenu = (props: Props) => {
                             "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                         )}
                     >
-                        Resources
+                        TO IMPORT INTO
                     </NavigationMenuPrimitive.Trigger>
 
                     <NavigationMenuPrimitive.Content
@@ -113,7 +113,7 @@ const NavigationMenu = (props: Props) => {
                             "text-sm font-medium text-gray-700 dark:text-gray-100"
                         )}
                     >
-                        GitHub
+                        PROJECT
                     </NavigationMenuPrimitive.Link>
                 </NavigationMenuPrimitive.Item>
 

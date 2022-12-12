@@ -78,7 +78,7 @@ const DropdownMenu = () => {
         <div className="relative inline-block text-left">
             <DropdownMenuPrimitive.Root>
                 <DropdownMenuPrimitive.Trigger asChild>
-                    <button>Click</button>
+                    <button>NOT YET READY TO IMPORT</button>
                 </DropdownMenuPrimitive.Trigger>
 
                 <DropdownMenuPrimitive.Portal>
