@@ -38,7 +38,6 @@ Primary.args = {
             />
         </div>
     ),
-    showCancel: true,
     optionsClassName: "flex justify-end space-x-4",
     options: [
         <DialogPrimitive.Close asChild>
