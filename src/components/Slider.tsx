@@ -18,9 +18,9 @@ const Slider = ({
     defaultValue,
     max,
     step,
-    uxWidth,
-    trackColor,
-    thumbColor,
+    uxWidth = "w-64",
+    trackColor = "bg-black",
+    thumbColor = "bg-black",
     additionalTrackProps,
     additionalThumbProps,
 }: SliderProps) => {
@@ -30,26 +30,18 @@ const Slider = ({
             max={max}
             step={step}
             aria-label="value"
-            className={`relative flex h-5 touch-none items-center ${
-                uxWidth ? uxWidth : "w-64"
-            }`}
+            className={`relative flex h-5 touch-none items-center ${uxWidth}`}
         >
             <SliderPrimitive.Track
-                className={`relative h-1 w-full grow rounded-full ${
-                    trackColor ? trackColor : "bg-black"
-                } ${additionalTrackProps}`}
+                className={`relative h-1 w-full grow rounded-full ${trackColor} ${additionalTrackProps}`}
             >
                 <SliderPrimitive.Range
-                    className={`absolute h-full rounded-full bg-black ${
-                        trackColor ? trackColor : "bg-black"
-                    } ${additionalTrackProps}`}
+                    className={`absolute h-full rounded-full bg-black ${trackColor} ${additionalTrackProps}`}
                 />
             </SliderPrimitive.Track>
             <SliderPrimitive.Thumb
                 className={cx(
-                    `block h-5 w-5 rounded-full ${
-                        thumbColor ? thumbColor : "bg-black"
-                    }`,
+                    `block h-5 w-5 rounded-full ${thumbColor}`,
                     additionalThumbProps
                 )}
             />

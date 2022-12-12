@@ -10,10 +10,9 @@ export type SwitchProps = {
 const Switch = ({ switchClassName, thumbClassName }: SwitchProps) => {
     return (
         <SwitchPrimitive.Root className={cx("group", switchClassName)}>
-            <SwitchPrimitive.Thumb className={cx(thumbClassName)} />
+            <SwitchPrimitive.Thumb className={thumbClassName} />
         </SwitchPrimitive.Root>
     );
 };
 
 export default Switch;
-
