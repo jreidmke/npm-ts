@@ -18,14 +18,13 @@ const CustomToggle = ({
     const [isActive, setIsActive] = useState(false);
 
     return (
-        <Toggle.Root>
+        <Toggle.Root onClick={() => setIsActive(!isActive)}>
             <div
                 className={cx(
                     "flex justify-center items-center",
                     genericClasses,
                     isActive ? activeClasses : inactiveClasses
                 )}
-                onClick={() => setIsActive(!isActive)}
             >
                 {trigger}
             </div>
