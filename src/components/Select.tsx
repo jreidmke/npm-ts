@@ -20,7 +20,7 @@ export type SelectProps = {
     scrollBtnClassName: string;
     viewportClassName: string;
     itemClassName: string;
-    defaultValue: string;
+    defaultValue?: string;
 };
 
 const Select = ({

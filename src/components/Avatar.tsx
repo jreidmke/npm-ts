@@ -5,12 +5,17 @@ export type AvatarProps = {
     imageSrc: string;
 };
 
-// trouble w/ image
-
 const CustomAvatar = ({ imageSrc }: AvatarProps) => (
-    <Avatar.Root className="AvatarRoot">
-        <Avatar.Image className="AvatarImage" src={imageSrc} alt="Colm Tuite" />
-        <Avatar.Fallback className="AvatarFallback" delayMs={600}>
+    <Avatar.Root className="relative inline-flex h-10 w-10">
+        <Avatar.Image
+            className="h-full w-full object-cover rounded-full"
+            src={imageSrc}
+            alt="Colm Tuite"
+        />
+        <Avatar.Fallback
+            className="flex h-full w-full items-center justify-center bg-white dark:bg-gray-800 rounded-full"
+            delayMs={600}
+        >
             CT
         </Avatar.Fallback>
     </Avatar.Root>

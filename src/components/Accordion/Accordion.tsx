@@ -12,7 +12,7 @@ export interface Item {
 
 export type AccordionProps = {
     accordionType: "multiple" | "single";
-    defaultValue: string | string[];
+    defaultValue?: string | string[];
     items: Item[];
     rootClassName: string;
     itemClassName: string;
@@ -55,16 +55,9 @@ export type AccordionTriggerProps = {
     className?: string;
 };
 
-const AccordionTrigger = ({
-    children,
-    className,
-    ...props
-}: AccordionTriggerProps) => (
+const AccordionTrigger = ({ children, className }: AccordionTriggerProps) => (
     <Accordion.Header className="flex">
-        <Accordion.Trigger
-            className={`AccordionTrigger ${className}`}
-            {...props}
-        >
+        <Accordion.Trigger className={`AccordionTrigger ${className}`}>
             {children}
             <ChevronDownIcon className="AccordionChevron" aria-hidden />
         </Accordion.Trigger>
@@ -76,12 +69,10 @@ export type AccordionContentProps = {
     className?: string;
 };
 
-const AccordionContent = ({
-    children,
-    className,
-    ...props
-}: AccordionContentProps) => (
-    <Accordion.Content className={cx("AccordionContent", className)} {...props}>
+const AccordionContent = ({ children, className }: AccordionContentProps) => (
+    <Accordion.Content
+        className={cx("AccordionContent", "overflow-hidden", className)}
+    >
         {children}
     </Accordion.Content>
 );
