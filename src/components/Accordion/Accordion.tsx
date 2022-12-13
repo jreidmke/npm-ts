@@ -1,39 +1,52 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
 import cx from "classnames";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 import "./Accordion.scss";
 
-const CustomAccordion = () => (
+export interface Item {
+    triggerContent: string;
+    bodyContent: any | any[];
+    value: string;
+}
+
+export type AccordionProps = {
+    accordionType: "multiple" | "single";
+    defaultValue: string | string[];
+    items: Item[];
+    rootClassName: string;
+    itemClassName: string;
+    triggerClassName: string;
+};
+
+const CustomAccordion = ({
+    accordionType,
+    items,
+    defaultValue = items[0].value,
+    rootClassName,
+    itemClassName,
+    triggerClassName,
+}: AccordionProps) => (
     <Accordion.Root
-        className="AccordionRoot"
-        type="single"
-        defaultValue="item-1"
-        collapsible
+        className={rootClassName}
+        // @ts-ignore
+        defaultValue={
+            accordionType === "single" ? defaultValue : [defaultValue]
+        }
+        type={accordionType}
+        collapsible={accordionType === "single"}
     >
-        <Accordion.Item className="AccordionItem" value="item-1">
-            <AccordionTrigger>Is it accessible?</AccordionTrigger>
-            <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
-            </AccordionContent>
-        </Accordion.Item>
-
-        <Accordion.Item className="AccordionItem" value="item-2">
-            <AccordionTrigger>Is it unstyled?</AccordionTrigger>
-            <AccordionContent>
-                Yes. It's unstyled by default, giving you freedom over the look
-                and feel.
-            </AccordionContent>
-        </Accordion.Item>
-
-        <Accordion.Item className="AccordionItem" value="item-3">
-            <AccordionTrigger>Can it be animated?</AccordionTrigger>
-            <Accordion.Content className="AccordionContent">
-                <div className="AccordionContentText">
-                    Yes! You can animate the Accordion with CSS or JavaScript.
-                </div>
-            </Accordion.Content>
-        </Accordion.Item>
+        {items.map((i) => (
+            <Accordion.Item
+                className={`overflow-hidden ${itemClassName}`}
+                value={i.value}
+            >
+                <AccordionTrigger className={triggerClassName}>
+                    {i.triggerContent}
+                </AccordionTrigger>
+                <AccordionContent>{i.bodyContent}</AccordionContent>
+            </Accordion.Item>
+        ))}
     </Accordion.Root>
 );
 
@@ -47,9 +60,9 @@ const AccordionTrigger = ({
     className,
     ...props
 }: AccordionTriggerProps) => (
-    <Accordion.Header className="AccordionHeader">
+    <Accordion.Header className="flex">
         <Accordion.Trigger
-            className={cx("AccordionTrigger", className)}
+            className={`AccordionTrigger ${className}`}
             {...props}
         >
             {children}
@@ -59,7 +72,7 @@ const AccordionTrigger = ({
 );
 
 export type AccordionContentProps = {
-    children: string;
+    children: ReactNode;
     className?: string;
 };
 
@@ -69,7 +82,7 @@ const AccordionContent = ({
     ...props
 }: AccordionContentProps) => (
     <Accordion.Content className={cx("AccordionContent", className)} {...props}>
-        <div className="AccordionContentText">{children}</div>
+        {children}
     </Accordion.Content>
 );
 
