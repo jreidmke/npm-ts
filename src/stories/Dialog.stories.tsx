@@ -13,7 +13,7 @@ const Template: ComponentStory<typeof Dialog> = (args) => <Dialog {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    trigger: <button className="Button violet">Custom trigger</button>,
+    trigger: <button>Custom trigger</button>,
     contentClassName: cx(
         "fixed z-50",
         "w-[95vw] max-w-md rounded-lg p-4 md:w-full",
