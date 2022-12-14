@@ -1,35 +1,28 @@
+import * as TogglePrimitive from "@radix-ui/react-toggle";
 import React, { useState } from "react";
-import * as Toggle from "@radix-ui/react-toggle";
-import cx from "classnames";
 
 export type ToggleProps = {
-    trigger: any;
-    genericClasses: string;
-    inactiveClasses: string;
-    activeClasses: string;
+    inactiveContent: any;
+    activeContent: any;
+    defaultActive: boolean;
 };
 
-const CustomToggle = ({
-    trigger,
-    genericClasses,
-    activeClasses,
-    inactiveClasses,
+const Toggle = ({
+    inactiveContent,
+    activeContent,
+    defaultActive,
 }: ToggleProps) => {
-    const [isActive, setIsActive] = useState(false);
+    const [isActive, setIsActive] = useState(defaultActive);
 
     return (
-        <Toggle.Root onClick={() => setIsActive(!isActive)}>
-            <div
-                className={cx(
-                    "flex justify-center items-center",
-                    genericClasses,
-                    isActive ? activeClasses : inactiveClasses
-                )}
-            >
-                {trigger}
-            </div>
-        </Toggle.Root>
+        <TogglePrimitive.Root
+            defaultPressed={isActive}
+            onPressedChange={setIsActive}
+            asChild
+        >
+            {isActive ? activeContent : inactiveContent}
+        </TogglePrimitive.Root>
     );
 };
 
-export default CustomToggle;
+export default Toggle;

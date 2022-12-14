@@ -11,17 +11,16 @@ export default {
 const Template: ComponentStory<typeof Toggle> = (args) => <Toggle {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {
-    trigger: <button className="italic">t</button>,
-    genericClasses: "rounded h-16 w-16 m-2 shadow-md",
-    inactiveClasses: "bg-pink-50 hover:bg-pink-200",
-    activeClasses: "border border-black bg-pink-500",
-};
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-    trigger: <h1>Check here</h1>,
-    genericClasses: "rounded h-16 w-32 m-8 shadow-lg text-center",
-    inactiveClasses: "border border-6 border-black hover:bg-red-50",
-    activeClasses: "border border-6 border-red-500 bg-white",
+Primary.args = {
+    activeContent: (
+        <div className="flex justify-center align-items-middle w-20 h-20 bg-red-300">
+            Active
+        </div>
+    ),
+    inactiveContent: (
+        <div className="flex justify-center align-items-middle w-20 h-20 bg-gray-500">
+            Inactive
+        </div>
+    ),
 };
