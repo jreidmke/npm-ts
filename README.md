@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 5c-2023 (Crescendo Collective Contentful Common Components 2023)
 
 ## Available Scripts
 
@@ -17,14 +15,10 @@ The page will reload if you make edits.\
 
 Builds the project
 
-### `npm run clean`
+## To install as NPM package
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Install ### `npm i 5c-2023`
 
-Removed /dist folder.
+In your ### `tailwind.config.js` add ### `tailwindcss-radix` to the plugin array like so:
 
-# To use as NPM Package
-
-Boot up a typescript react app (`npx create-react-app {app-name} --template typescript`) and import {package name} via `npm i {package name}`
-
-Import the Switch component into your react project to display it on your view.
+### `plugins: [require("tailwindcss-radix")()]`
